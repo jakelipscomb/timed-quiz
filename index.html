@@ -5,21 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Timed Coding Quiz</title>
 </head>
 <body>
+    <p id="timer">time:<span id="time-left">0</span></p>
     <section id="before-start">
         <h1>Timed Coding Quiz</h1>
         <p>This is a game that tests your coding knowledge!</p>
         <button id="start-button">Start</button>
     </section>
-    <section id="question-container">
-        <h2 id="question"></h2>
-        <ul id="quesiton-answers">
-            <li><button></button></li>
-            <li><button></button></li>
-            <li><button></button></li>
-            <li><button></button></li>
+    <section class="question-container" id="quiz">
+        <h2 id="question-text">Question Text</h2>
+        <ul id="question-answers">
+            <li class="option">
+                <button id="first-option">Select</button>
+            </li>
+
+            <li class="option">
+                <button id="second-option">Select</button>
+            </li>
+
+            <li class="option">
+                <button id="third-option">Select</button>
+            </li>
+
+            <li class="option">
+                <button id="fourth-option">Select</button>
+            </li>
         </ul>
     </section>
     <script type="text/javascript" src="./assets/js/script.js"></script>
