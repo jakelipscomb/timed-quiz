@@ -12,28 +12,19 @@
     <section id="before-start">
         <h1>Timed Coding Quiz</h1>
         <p>This is a game that tests your coding knowledge!</p>
-        <button id="start-button">Start</button>
+        <!-- <button id="start-button">Start</button> -->
     </section>
-    <section class="question-container" id="quiz">
-        <h2 id="question-text">Question Text</h2>
-        <ul id="question-answers">
-            <li class="option">
-                <button id="first-option">Select</button>
-            </li>
-
-            <li class="option">
-                <button id="second-option">Select</button>
-            </li>
-
-            <li class="option">
-                <button id="third-option">Select</button>
-            </li>
-
-            <li class="option">
-                <button id="fourth-option">Select</button>
-            </li>
-        </ul>
-    </section>
+    <h2>Quiz</h2>
+    <div id="question-container">
+        <h3 id="question-number"></h3>
+        <h4 id="question-prompt"></h4>
+        <ul id="options-list"></ul>
+        <button id="submit-button">Submit</button>
+    </div>
+    <div id="result-container">
+        <h4 id="result-text"></h4>
+        <button id="next-button">Next Question</button>
+    </div>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 </html>
