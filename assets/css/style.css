@@ -1,5 +1,14 @@
-#question-container{
-    list-style-type: none;
-
-}
-
+#start-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #question-container, #result-container {
+    display: none;
+  }

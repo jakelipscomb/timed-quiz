@@ -38,6 +38,29 @@ var startTimer = document.getElementById("timer");
 var timerSpan = document.getElementById("time-left");
 var timeLeft = 60;
 
+// questions and options go here
+let currentQuestionIndex = 0;
+let questionNumberElement = document.getElementById("question-number");
+let questionPromptElement = document.getElementById("question-prompt");
+let optionsListElement = document.getElementById("options-list");
+
+
+//buttons go here
+let startButton = document.getElementById("start-button");
+let submitButton = document.getElementById("submit-button");
+let nextButton = document.getElementById("next-button");
+
+//containers and text goes here
+let resultTextElement = document.getElementById("result-text");
+let questionContainer = document.getElementById("question-container");
+let resultContainer = document.getElementById("result-container");
+
+
+startButton.addEventListener("click", function() {
+  startButton.style.display = "none";
+  questionContainer.style.display = "block";
+  startGame();
+});
 
 
 
@@ -66,16 +89,6 @@ function startGame() {
 startTimer.onclick = startGame();
 
 // quiz goes here
-
-let currentQuestionIndex = 0;
-let questionNumberElement = document.getElementById("question-number");
-let questionPromptElement = document.getElementById("question-prompt");
-let optionsListElement = document.getElementById("options-list");
-let submitButton = document.getElementById("submit-button");
-let resultTextElement = document.getElementById("result-text");
-let nextButton = document.getElementById("next-button");
-let questionContainer = document.getElementById("question-container");
-let resultContainer = document.getElementById("result-container");
 
 function displayQuestion(question) {
     questionNumberElement.textContent = "Question " + question.number;
