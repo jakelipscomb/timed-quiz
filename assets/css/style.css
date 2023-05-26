@@ -1,3 +1,43 @@
+*  {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkblue;
+
+}
+
+#timer, #before-start, #question-container, #result-container, #high-score-container, #high-score  {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: goldenrod 10px solid;
+    font-size: 30px;
+
+}
+
+#question-container {
+    text-align: left
+}
+
+ul {
+    list-style-type: none;
+}
+
+#submit-button, #next-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
 #start-button {
     display: block;
     margin: 20px auto;
@@ -7,8 +47,8 @@
     color: white;
     border: none;
     cursor: pointer;
-  }
+}
   
-  #question-container, #result-container {
+#question-container, #result-container {
     display: none;
-  }
+}

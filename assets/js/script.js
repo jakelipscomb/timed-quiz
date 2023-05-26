@@ -36,7 +36,7 @@ let quizQuestions = [
 // timer goes here
 var startTimer = document.getElementById("timer");
 var timerSpan = document.getElementById("time-left");
-var timeLeft = 60;
+var timeLeft = 75;
 
 // questions and options go here
 let currentQuestionIndex = 0;
@@ -71,22 +71,15 @@ function startGame() {
         if(timeLeft < 0) {
             clearInterval(gameInterval);
             window.location.href = "highscore.html";
+            endQuiz();
         }
     }, 1000);
 }
 
-// function adjustTime(currentQuestion.correct) {
-//         if (currentQuestion.correct) {
-//             timeLeft += 10;
-//         } else {
-//             timeLeft -= 10;
-//             if (timeLeft < 0) {
-//                 timeLeft = 0;
-//             }
-//         }
-//     }
-
-startTimer.onclick = startGame();
+// wrong answer deducts time
+function adjustTime() {
+    timeLeft -= 10;
+}
 
 // quiz goes here
 
@@ -115,6 +108,7 @@ function processAnswer(answer) {
         resultTextElement.textContent = "Correct answer!";
     } else {
         resultTextElement.textContent = "Wrong answer. The correct answer is: " + currentQuestion.correct;
+        adjustTime()
     }
     resultContainer.style.display = "block";
 }
@@ -136,7 +130,36 @@ nextButton.addEventListener("click", function() {
     } else {
         resultTextElement.textContent = "Quiz finished!";
         window.location.href = "highscore.html";
+        endQuiz();
+
     }
 });
 
+
+//score prompt for end of quiz
+function endQuiz() {
+    alert("The Quiz has ended! Your Score is: " + timeLeft);
+}
+
 displayQuestion(quizQuestions[currentQuestionIndex]);
+
+
+//highscore goes here
+let highScoreElement = document.getElementById("high-score");
+
+// Check if high score and time remaining exist in localStorage
+if (localStorage.getItem("highScore") && localStorage.getItem("timeLeft")) {
+  highScoreElement.textContent = localStorage.getItem("highScore") + " with " + localStorage.getItem("timeLeft") + " seconds remaining";
+} else {
+  highScoreElement.textContent = "No high score yet";
+}
+
+function updateHighScore(score, timeLeft) {
+  if (!localStorage.getItem("highScore") || score > localStorage.getItem("highScore")) {
+    localStorage.setItem("highScore", score);
+    localStorage.setItem("timeLeft", timeLeft);
+    highScoreElement.textContent = score + " with " + timeLeft + " seconds remaining";
+  }
+}
+
+updateHighScore(100, 30);
